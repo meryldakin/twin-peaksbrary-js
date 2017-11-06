@@ -1,3 +1,5 @@
+const baseURL = `https://www.googleapis.com/books/v1/volumes`;
+
 class App {
   constructor() {
     this.list = document.querySelector('.ui.relaxed.divided.list');
@@ -16,9 +18,55 @@ class App {
     input.value = '';
     this.list.innerHTML = '';
 
-    const filteredBooks = Book.findByTitle(value);
+    // const request = new XMLHttpRequest();
+    // request.open('GET', `${baseURL}?q=${value}`);
+    //
+    // request.onload = function() {
+    //   const response = JSON.parse(this.response);
+    //
+    //   const books = response.items
+    //     .map(item => {
+    //       return {
+    //         id: item.id,
+    //         title: item.volumeInfo.title,
+    //         author: item.volumeInfo.authors[0],
+    //         pages: item.volumeInfo.pageCount,
+    //         description: item.volumeInfo.description
+    //       };
+    //     })
+    //     .map(bookData => {
+    //       return new Book(bookData);
+    //     });
+    //
+    //   app.renderBooks(books);
+    // };
+    //
+    // request.send();
 
-    this.renderBooks(filteredBooks);
+    fetch(`${baseURL}?q=${value}`)
+      .then(res => res.json())
+      .then(response => {
+        const books = response.items
+          .map(item => {
+            return {
+              id: item.id,
+              title: item.volumeInfo.title,
+              author: item.volumeInfo.authors[0],
+              pages: item.volumeInfo.pageCount,
+              description: item.volumeInfo.description
+            };
+          })
+          .map(bookData => {
+            return new Book(bookData);
+          });
+
+        this.renderBooks(books);
+      });
+
+    console.log('at the bottom');
+    // const filteredBooks = Book.findByTitle(value);
+    //
+    // this.renderBooks(filteredBooks);
   }
 
   handleItemClick(ev) {
