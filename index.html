@@ -1,62 +1,64 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>BookSearcher</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
-  </head>
 
-  <body>
-    <!--  navbar-->
-    <div class="ui inverted teal menu">
-      <a class='item' href="/books">
-        <h2 class="ui header">
-          <i class="search icon"></i>
-          <div class="content">
-            Book Searchr
-          </div>
-          <div class="sub header">
-            The app that searches for books
-          </div>
-        </h2>
-      </a>
-    </div>
+<head>
+  <title>BookSearcher</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet">
 
+</head>
 
-    <div class='ui centered grid'>
-
-      <div class='one wide column'></div>
-
-      <!--  form -->
-      <div class='seven wide column'>
-
-        <form action='/' class="ui form">
-          <div class="field">
-            <label>Search Books</label>
-            <input type="text" placeholder="Enter a search term"/>
-          </div>
-          <input type="submit" class="ui blue button" value="Search Books"/>
-        </form>
-
-      </div>
-
-      <!--  list -->
-      <div class='seven wide column'>
-
-        <div class="ui relaxed divided list">
-
-
+<body>
+  <!--  navbar-->
+  <div class="ui inverted red menu">
+    <a class='item' href="/">
+      <h2 class="ui header">
+        <img src="https://s3.amazonaws.com/s3.timetoast.com/public/uploads/photos/9060253/OwlCaveSymbol.png?1477434842" />
+        <div class="content script">
+          Twin Peaks Public Library
         </div>
+        <div class="sub header">
+          We have books about Twin Peaks, what more do you want?
+        </div>
+      </h2>
+    </a>
+  </div>
 
-      </div>
+  <div class='ui centered grid'>
 
-      <div class='one wide column'></div>
+    <div class='one wide column'></div>
+
+    <!--  form -->
+    <div class='seven wide column'>
+
+      <form action='/' class="ui form">
+        <div class="field">
+          <label class="script">Search Books</label>
+          <input type="text" placeholder="Enter a search term" />
+        </div>
+        <input type="submit" class="ui gray button" value="Search" />
+      </form>
 
     </div>
 
-    <script src="src/alexs-fetch.js"></script>
-    <script src="src/app.js"></script>
-    <script src="src/book.js"></script>
-    <script src="src/data.js"></script>
-    <script src="src/index.js"></script>
-  </body>
+    <!--  list -->
+    <div class='seven wide column'>
+      <div class="ui relaxed divided list">
+      </div>
+    </div>
+    <div class='one wide column'></div>
+  </div>
+
+  <script src="src/simpleFetch.js"></script>
+  <script src="src/app.js"></script>
+  <script src="src/book.js"></script>
+  <script src="src/data.js"></script>
+  <script src="src/index.js"></script>
+  <style>
+    .script {
+      font-family: 'Homemade Apple', cursive;
+    }
+  </style>
+</body>
+
 </html>
