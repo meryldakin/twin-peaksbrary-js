@@ -1,3 +1,5 @@
+See the difference between this code and the [Twin Peaksbrary Rails App](https://github.com/meryldakin/twin-peaksbrary).
+
 # XML HTTP Request
 # Breakdown of an XHR Request
 
