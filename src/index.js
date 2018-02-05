@@ -8,7 +8,6 @@ const fetchBooks = () => data.books;
 document.addEventListener('DOMContentLoaded', function () {
   const app = new App();
 
-
   app.renderBooks(fetchBooks().map(bookData => new Book(bookData)));
 
 });

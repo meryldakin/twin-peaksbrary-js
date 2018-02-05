@@ -9,15 +9,12 @@ const Book = (() => {
       this.author = props.author;
       this.thumbnail = props.imageLinks.thumbnail;
       this.description = props.description;
-      this.pages = props.pages;
-      this.averageRating = props.averageRating;
       all.push(this);
     }
 
     static all() {
       return all;
     }
-
     static findById(bookId) {
       return all.find(({ id }) => {
         return id === bookId;
@@ -29,6 +26,7 @@ const Book = (() => {
         return title.toLowerCase().includes(searchTerm);
       });
     }
+
 
     renderListItem() {
       const div = document.createElement('div');
